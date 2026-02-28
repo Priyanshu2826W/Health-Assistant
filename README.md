@@ -22,8 +22,133 @@
     ![Testing of rgb when switch on](https://github.com/user-attachments/assets/d3f27adc-7c9f-4f09-981b-e3c42e50f044)
  2. Testing of RGB(for assistant) when switch is off:
     ![Testing of rgb when switch off ](https://github.com/user-attachments/assets/1d893a60-3b34-423b-8132-33b84155a41f)
- 3. Testing Video of buzzer with toggle switch :
+    # Code
+// Pin Definitions
+const int SWITCH_PIN = 4;
+const int GREEN_LED  = 6;
+const int RED_LED    = 5;
+// Blink timing
+const int BLINK_DELAY = 300;
+void setup() {
+  pinMode(SWITCH_PIN, INPUT_PULLUP);
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(RED_LED, OUTPUT);
+}
+void loop() {
+  // Read switch state (LOW = pressed)
+  bool isPressed = (digitalRead(SWITCH_PIN) == LOW);
+
+  if (isPressed) {
+    handlePressedState();
+  } else {
+    handleReleasedState();
+  }
+}
+//  When button is pressed
+void handlePressedState() {
+  digitalWrite(GREEN_LED, HIGH);  // Green ON
+  digitalWrite(RED_LED, LOW);     // Red OFF
+}
+//  When button is released
+void handleReleasedState() {
+  digitalWrite(GREEN_LED, LOW);   // Green OFF
+
+  // Red blinking
+  digitalWrite(RED_LED, HIGH);
+  delay(BLINK_DELAY);
+
+  digitalWrite(RED_LED, LOW);
+  delay(BLINK_DELAY);
+}
+ 4. Testing Video of buzzer with toggle switch :
      https://github.com/user-attachments/assets/0686ec95-1307-42ac-9540-21d9e520734c
- 4. Some(20-30%) components of assitant:
+ # Code
+// Pin Configuration
+// =====================
+const int SWITCH_PIN = 4;
+const int GREEN_LED  = 6;
+const int RED_LED    = 5;
+const int BUZZER_1   = 7;
+const int BUZZER_2   = 8;
+
+// =====================
+// Setup Function
+// =====================
+void setup() {
+  pinMode(SWITCH_PIN, INPUT);
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(RED_LED, OUTPUT);
+  pinMode(BUZZER_1, OUTPUT);
+  pinMode(BUZZER_2, OUTPUT);
+}
+
+// =====================
+// Main Loop
+// =====================
+void loop() {
+  bool isSwitchOn = digitalRead(SWITCH_PIN);
+
+  if (isSwitchOn) {
+    handleSystemActive();
+  } else {
+    handleSystemInactive();
+  }
+}
+
+// =====================
+// Active State (Switch ON)
+// =====================
+void handleSystemActive() {
+  digitalWrite(GREEN_LED, HIGH);  // Green ON
+  digitalWrite(RED_LED, LOW);     // Red OFF
+
+  playGreetingTone();             // Play "Good Afternoon" tone
+}
+
+// =====================
+// Inactive State (Switch OFF)
+// =====================
+void handleSystemInactive() {
+  digitalWrite(GREEN_LED, LOW);   // Green OFF
+  digitalWrite(RED_LED, HIGH);    // Red ON
+
+  stopBuzzer();                   // Ensure buzzer is OFF
+}
+
+// =====================
+// Greeting Tone Function
+// =====================
+void playGreetingTone() {
+  // "Good"
+  tone(BUZZER_1, 400); tone(BUZZER_2, 500); delay(120);
+  tone(BUZZER_1, 500); tone(BUZZER_2, 600); delay(120);
+
+  // Pause
+  stopBuzzer(); delay(80);
+
+  // "After"
+  tone(BUZZER_1, 450); tone(BUZZER_2, 550); delay(150);
+  tone(BUZZER_1, 500); tone(BUZZER_2, 650); delay(150);
+
+  // Pause
+  stopBuzzer(); delay(100);
+
+  // "Noon"
+  tone(BUZZER_1, 600); tone(BUZZER_2, 700); delay(200);
+  tone(BUZZER_1, 500); tone(BUZZER_2, 600); delay(300);
+
+  stopBuzzer();
+}
+
+// =====================
+// Stop Buzzer Function
+// =====================
+void stopBuzzer() {
+  noTone(BUZZER_1);
+  noTone(BUZZER_2);
+}
+     
+ 5. Some(20-30%) components of assitant:
     ![some components 1](https://github.com/user-attachments/assets/6ebd865e-6bb1-4ab7-a2a6-20af320a3523)
     ![Some Components ](https://github.com/user-attachments/assets/50e4a05d-94ba-4507-a69e-b3434ccd1f1e)
+
