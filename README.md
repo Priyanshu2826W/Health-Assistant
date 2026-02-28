@@ -60,8 +60,10 @@ void handleReleasedState() {
   digitalWrite(RED_LED, LOW);
   delay(BLINK_DELAY);
 }
+
  4. Testing Video of buzzer with toggle switch :
-     https://github.com/user-attachments/assets/0686ec95-1307-42ac-9540-21d9e520734c
+    https://github.com/user-attachments/assets/0686ec95-1307-42ac-9540-21d9e520734c
+    
  # Code
 // Pin Configuration
 // =====================
