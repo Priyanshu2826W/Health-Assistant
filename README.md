@@ -194,6 +194,6 @@ The system is powered using a rechargeable battery connected through a TP4056 ch
 * Implementation of  decision-making logic for health suggestions
 * Display real-time feedback on LCD/OLED and emotion for the assitant 
 * Adding interaction using buttons or voice input
-
+* Setting up with API and cloud( software part).
 
 
