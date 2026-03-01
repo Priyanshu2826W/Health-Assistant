@@ -196,4 +196,13 @@ The system is powered using a rechargeable battery connected through a TP4056 ch
 * Adding interaction using buttons or voice input
 * Setting up with API and cloud( software part).
 
+# Future Scope
+1. Mobile App and Cloud Tracking
+  * Store daily health data
+  * Show graphs & reports
+    
+2. Elderly Care & Emergency Support
+  * Detect abnormal pulse/temp.
+  * Send alert to family.
+Can be used for home & healthcare.
 
