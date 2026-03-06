@@ -178,7 +178,7 @@ void stopBuzzer() {
     ![some components 1](https://github.com/user-attachments/assets/6ebd865e-6bb1-4ab7-a2a6-20af320a3523)
     ![Some Components ](https://github.com/user-attachments/assets/50e4a05d-94ba-4507-a69e-b3434ccd1f1e)
 
-#  Current Progress(20-30%)
+#  Current Progress(30%-40%)
 The initial prototype has been successfully tested with the following components:
 * RGB LED for status indication
 * Buzzer for alert system in assitant
@@ -189,12 +189,14 @@ The initial prototype has been successfully tested with the following components
 #  Hardware Setup
 The system is powered using a rechargeable battery connected through a TP4056 charging module. A buck converter is used to regulate the voltage and ensure stable power supply to the MCU and other components.
 
-# Remaining implementation will be done during hackathon like:
+# The remaining implementation (In progress)
 * Integration of  pulse, temperature sensors and other hardware components.
 * Implementation of  decision-making logic for health suggestions
 * Display real-time feedback on LCD/OLED and emotion for the assitant 
 * Adding interaction using buttons or voice input
 * Setting up with API and cloud( software part).
+
+* Updates and further developments will be added to the GitHub repository as the project progresses.
 
 # Future Scope
 1. Mobile App and Cloud Tracking
